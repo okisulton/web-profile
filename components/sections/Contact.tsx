@@ -77,7 +77,7 @@ export function ContactSection() {
               Get In <span className="gradient-text">Touch</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind or want to discuss opportunities? I'd love to hear from you.
+              Have a project in mind or want to discuss opportunities? {"I'd"} love to hear from you.
             </p>
             <div className="w-24 h-1 bg-electric-blue mx-auto mt-4"></div>
           </motion.div>

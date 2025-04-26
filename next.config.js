@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Remove output: 'export' since we need dynamic routes for authentication
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -10,6 +9,9 @@ const nextConfig = {
       },
     ],
   },
+  typescript: {
+    // ignoreBuildErrors: true, // Sementara untuk bypass error
+  },
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;

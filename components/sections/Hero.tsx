@@ -46,7 +46,7 @@ export function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Hello, I'm{" "}
+            Hello, {"I'm "}
             <span className="gradient-text">Oki Sulton</span>
           </motion.h1>
           

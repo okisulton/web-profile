@@ -115,7 +115,7 @@ export function TestimonialsSection() {
                           <Quote className="h-8 w-8 text-electric-blue mb-4" />
                           
                           <blockquote className="text-muted-foreground mb-6 flex-1">
-                            "{testimonial.quote}"
+                            {testimonial.quote}
                           </blockquote>
                           
                           <div className="flex items-center gap-4 mt-auto">

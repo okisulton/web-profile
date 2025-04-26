@@ -97,7 +97,7 @@ export function AboutSection() {
               </h3>
               
               <p className="text-muted-foreground">
-                I'm a passionate Mobile Android Developer with over 5 years of experience 
+                {"I'm"} a passionate Mobile Android Developer with over 5 years of experience 
                 creating innovative, user-friendly applications. I specialize in Kotlin 
                 development and have a strong eye for UI/UX design principles.
               </p>

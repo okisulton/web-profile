@@ -119,7 +119,7 @@ export function ProjectsSection() {
               My <span className="gradient-text">Projects</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Explore my recent work and the innovative solutions I've built.
+              Explore my recent work and the innovative solutions {"I've"} built.
             </p>
             <div className="w-24 h-1 bg-neon-purple mx-auto mt-4"></div>
           </motion.div>
