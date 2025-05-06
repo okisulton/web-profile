@@ -66,7 +66,7 @@ export function AboutSection() {
             >
               <div className="relative w-72 h-80 md:w-80 md:h-96 rounded-lg overflow-hidden">
                 <Image
-                  src="https://scontent.fsrg10-1.fna.fbcdn.net/v/t39.30808-6/306515876_2202586306584325_7627548134813375603_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGA8b_r56oYN2hlF_1ktESbJG2sLG3D78MkbawsbcPvw6mI5Pbclb2BeLbYd1Qlv6WF6jsQRfYvvdjXSyKldNgK&_nc_ohc=pelND9s8xXoQ7kNvwFfa0KZ&_nc_oc=AdleYX5_BwLoflkRrIXzMrCVuWE0Y6DMgfQJEeTCe10jr_oyRhHNFXvFmxf4mMNOBXE&_nc_zt=23&_nc_ht=scontent.fsrg10-1.fna&_nc_gid=EiLqFhMsyFeOggqmpHtmJA&oh=00_AfGTCwU6QFbplPCSptIcznqVXQbqgxqPn34QJcmhtKnfnA&oe=6814D66B"
+                  src="https://i.ibb.co.com/DHQBWZRD/fb-img.jpg"
                   alt="Oki Sulton"
                   fill
                   className="object-cover"
