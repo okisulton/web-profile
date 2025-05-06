@@ -91,7 +91,7 @@ export function HeroSection() {
           >
             <Button
               onClick={() => {
-                  const element = document.getElementById("project");
+                  const element = document.getElementById("projects");
                   if (element) {
                     element.scrollIntoView({ behavior: "smooth" });
                   }
