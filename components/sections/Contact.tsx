@@ -80,7 +80,7 @@ export function ContactSection() {
       toast({
         title: "Message sent!",
         description: "Thank you for reaching out. I'll respond to your message soon.",
-        icon: <CheckCircle2 className="h-5 w-5 text-green-500" />
+        // icon: <CheckCircle2 className="h-5 w-5 text-green-500" />
       });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -89,7 +89,7 @@ export function ContactSection() {
         title: "Error sending message",
         description: "There was a problem sending your message. Please try again.",
         variant: "destructive",
-        icon: <AlertCircle className="h-5 w-5" />
+        // icon: <AlertCircle className="h-5 w-5" />
       });
     } finally {
       setIsSubmitting(false);
