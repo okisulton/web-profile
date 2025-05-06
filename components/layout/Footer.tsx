@@ -58,7 +58,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">Connect</h3>
             <div className="flex space-x-4">
               <Link 
-                href="https://github.com/" 
+                href="https://github.com/okisulton" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -67,7 +67,7 @@ export default function Footer() {
                 <Github size={20} />
               </Link>
               <Link 
-                href="https://linkedin.com/" 
+                href="https://www.linkedin.com/in/okisulton/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -85,7 +85,7 @@ export default function Footer() {
                 <Twitter size={20} />
               </Link>
               <Link 
-                href="https://instagram.com/" 
+                href="https://www.instagram.com/os.alimi/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -94,7 +94,7 @@ export default function Footer() {
                 <Instagram size={20} />
               </Link>
               <Link 
-                href="mailto:contact@okisulton.com" 
+                href="mailto:os.alimie@gmail.com" 
                 aria-label="Email"
                 className="text-foreground hover:text-electric-blue transition-colors"
               >
