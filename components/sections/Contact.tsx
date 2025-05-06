@@ -7,7 +7,9 @@ import {
   Phone, 
   MapPin, 
   Send,
-  Loader2
+  Loader2,
+  CheckCircle2,
+  AlertCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -43,13 +45,34 @@ export function ContactSection() {
     },
   };
   
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Get form data
+      const formData = new FormData(e.currentTarget);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const subject = formData.get('subject');
+      const message = formData.get('message');
+      
+      // Create URL with query parameters
+      const url = new URL("https://script.google.com/macros/s/AKfycbzUGgG7NaxvAMDLyG6vR5wNHL670S15qfrSF6L-3jXt3kRR95LwJjkQcR42W4Hzzta4/exec");
+      url.searchParams.append('name', name as string);
+      url.searchParams.append('email', email as string);
+      url.searchParams.append('subject', subject as string);
+      url.searchParams.append('message', message as string);
+      
+      // Send request to Google Apps Script
+      const response = await fetch(url.toString(), {
+        method: 'POST',
+        mode: 'no-cors', // Using no-cors mode since Apps Script may not support CORS
+      });
+      
+      // Since we're using no-cors, we can't actually read the response
+      // So we'll just assume it worked if no error was thrown
+      
       if (formRef.current) {
         formRef.current.reset();
       }
@@ -57,8 +80,20 @@ export function ContactSection() {
       toast({
         title: "Message sent!",
         description: "Thank you for reaching out. I'll respond to your message soon.",
+        icon: <CheckCircle2 className="h-5 w-5 text-green-500" />
       });
-    }, 1500);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      
+      toast({
+        title: "Error sending message",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive",
+        icon: <AlertCircle className="h-5 w-5" />
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -92,7 +127,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h3 className="font-medium">Email</h3>
-                    <p className="text-muted-foreground">contact@okisulton.com</p>
+                    <p className="text-muted-foreground">os.alimie@gmail.com</p>
                   </div>
                 </CardContent>
               </Card>
@@ -104,7 +139,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h3 className="font-medium">Phone</h3>
-                    <p className="text-muted-foreground">+62 812 3456 7890</p>
+                    <p className="text-muted-foreground">+62 822 3594 0085</p>
                   </div>
                 </CardContent>
               </Card>
@@ -116,7 +151,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h3 className="font-medium">Location</h3>
-                    <p className="text-muted-foreground">Jakarta, Indonesia</p>
+                    <p className="text-muted-foreground">Temanggung, Indonesia</p>
                   </div>
                 </CardContent>
               </Card>
@@ -134,6 +169,7 @@ export function ContactSection() {
                         </label>
                         <Input
                           id="name"
+                          name="name"
                           placeholder="John Doe"
                           required
                           className="bg-background"
@@ -145,6 +181,7 @@ export function ContactSection() {
                         </label>
                         <Input
                           id="email"
+                          name="email"
                           type="email"
                           placeholder="john@example.com"
                           required
@@ -159,6 +196,7 @@ export function ContactSection() {
                       </label>
                       <Input
                         id="subject"
+                        name="subject"
                         placeholder="Project Inquiry"
                         required
                         className="bg-background"
@@ -171,6 +209,7 @@ export function ContactSection() {
                       </label>
                       <Textarea
                         id="message"
+                        name="message"
                         placeholder="Tell me about your project..."
                         rows={6}
                         required
