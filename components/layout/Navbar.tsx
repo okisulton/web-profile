@@ -51,18 +51,25 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <Link
-                key={item.name}
-                href={item.href}
-                className="text-foreground/80 hover:text-electric-blue transition-colors"
+              key={item.name}
+              href={item.href}
+              className="text-foreground/80 hover:text-electric-blue transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                const targetElement = document.querySelector(item.href);
+                if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
               >
-                {item.name}
+              {item.name}
               </Link>
             ))}
             {/* <ThemeToggle /> */}
-          </nav>
+            </nav>
 
           {/* Mobile Navigation Toggle */}
           <div className="flex items-center gap-4 md:hidden">
